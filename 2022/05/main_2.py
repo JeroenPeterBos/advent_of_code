@@ -38,8 +38,9 @@ def main(lines):
     stacks, moves = parse_lines(lines)
 
     for move_count, from_stack, to_stack in moves:
-        for _ in range(move_count):
-            stacks[to_stack - 1].append(stacks[from_stack - 1].pop())
+        moving = stacks[from_stack - 1][-move_count:]
+        stacks[from_stack - 1] = stacks[from_stack - 1][:-move_count]
+        stacks[to_stack - 1] += moving
     
     return "".join(stack[-1] for stack in stacks)
 

@@ -5,13 +5,13 @@ def read_lines(filename):
         return f.read().splitlines()
 
 
-def parse_line(line):
-    pass
-
-
 def main(lines):
-    for line in lines:
-        parse_line(line)
+    line = lines[0]
+
+    for offset in range(len(line) - 3):
+        characters = line[offset:offset + 4]
+        if len(set(characters)) == 4:
+            return offset + 4
 
 
 if __name__ == '__main__':
