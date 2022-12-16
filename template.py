@@ -7,13 +7,12 @@ def read_lines(filename):
         return f.read().splitlines()
 
 
-def parse_line(line):
+def parse_lines(lines):
     pass
 
 
 def main(lines):
-    for line in lines:
-        parse_line(line)
+    parse_lines(lines)
 
 
 if __name__ == '__main__':
