@@ -1,6 +1,7 @@
 import glob
 import re
 import math
+from pprint import pprint
 
 def read_lines(filename):
     with open(filename) as f:
